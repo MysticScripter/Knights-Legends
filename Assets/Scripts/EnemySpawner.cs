@@ -75,6 +75,7 @@ public class EnemySpawner : MonoBehaviour
         int index2 = Random.Range(0, enemies.Length);
         GameObject zombie = Instantiate(enemies[index2], spawnPoints[index1].position, spawnPoints[index1].rotation);
         zombie.name = enemies[index2].name;
+        zombie.transform.localScale = new Vector3(0.6f,0.6f,0.6f);
         zombie.GetComponent<EnemyHealth>().startHealth = bossHealth;
         zombie.GetComponent<EnemyHealth>().health = bossHealth;
     }

@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsEnemy;
     public LayerMask whatIsGround;
     private bool attackhit;
-    private EnemyHealth enhealth;
     private PlayerHealth playerhealth;
     private Rigidbody2D player;
 
@@ -32,16 +31,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
             Attack();
-            try
-            {
-                enhealth = GameObject.FindWithTag("Zombie").GetComponent<EnemyHealth>();
-            }
-            catch
-            {
-                return;
-            }
-            
-           
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Knight_attack") && !attackhit)
                 CheckAttack();
             if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Knight_attack"))
@@ -77,16 +66,22 @@ public class PlayerMovement : MonoBehaviour
     {
         attackPressed = Input.GetButtonDown("Fire1");
         animator.SetBool("AttackPressed", attackPressed);
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Knight_attack"))
+            return;
+        
         if (attackPressed)
             FindObjectOfType<AudioManager>().Play("SwordSwing");
     }
 
     private void CheckAttack()
     {
-        if (Physics2D.OverlapArea(pointA.position, pointB.position, whatIsEnemy))
+        Collider2D[] enemies = Physics2D.OverlapAreaAll(pointA.position, pointB.position, whatIsEnemy);
         {
-            --enhealth.health;
-            attackhit = true;
+            foreach(Collider2D enemy in enemies)
+            {
+                enemy.GetComponent<EnemyHealth>().health--;
+                attackhit = true;
+            }
         }
         
     }
