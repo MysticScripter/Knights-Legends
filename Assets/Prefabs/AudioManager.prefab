@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1612523880811564}
+  m_IsPrefabAsset: 1
+--- !u!1 &1612523880811564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4535977932241432}
+  - component: {fileID: 114345584866772898}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4535977932241432
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612523880811564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.3644476, y: -1.2321008, z: 0.041992188}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114345584866772898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612523880811564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989492ed00a44cf4e803b7b903e0f818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: 64f7afc725b5975498945e98454687dc, type: 3}
+    source: {fileID: 0}
+    name: Menu
+    volume: 0.3
+    pitch: 1
+    loop: 1
+  - clip: {fileID: 8300000, guid: dbe9185c961611b4889624020c621d1a, type: 3}
+    source: {fileID: 0}
+    name: Theme
+    volume: 0.3
+    pitch: 1
+    loop: 1
+  - clip: {fileID: 8300000, guid: 7f30161aee0d9904ea9ccb69b18f55bf, type: 3}
+    source: {fileID: 0}
+    name: ZombieDeath1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 972d020725ece98468d63bf5d9125ba9, type: 3}
+    source: {fileID: 0}
+    name: ZombieDeath2
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 63e073216944ed84da8c315039e71827, type: 3}
+    source: {fileID: 0}
+    name: Jump
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 70cbb16b20a9aeb4e965bd335c5292df, type: 3}
+    source: {fileID: 0}
+    name: SwordSwing
+    volume: 0.5
+    pitch: 1
+    loop: 0
